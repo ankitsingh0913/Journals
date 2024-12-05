@@ -1,0 +1,29 @@
+spring:
+  redis:
+    host: localhost
+    port: 6379
+  application:
+    name: learning
+  data:
+    mongodb:
+      uri: mongodb+srv://ankitsingh11:root@cluster0.fvbrl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      database: journalDB
+      auto-index-creation: true
+  main:
+    allow-circular-references: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ankitjanghare2106@gmail.com
+    password: nbgp bmde hpom pjhv
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+weather:
+  api:
+    key: 8afd51aa8fa8ce7c9d1f3aa828bfabc6
+
