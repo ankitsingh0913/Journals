@@ -1,21 +1,21 @@
 spring:
   redis:
-    host: localhost
-    port: 6379
+    host: ${Redis_Host}
+    port: ${Redis_Port}
   application:
-    name: learning
+    name: JournalDB
   data:
     mongodb:
-      uri: mongodb+srv://ankitsingh11:root@cluster0.fvbrl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      uri: ${DataBase_URI}
       database: journalDB
       auto-index-creation: true
   main:
     allow-circular-references: true
   mail:
-    host: smtp.gmail.com
-    port: 587
-    username: ankitjanghare2106@gmail.com
-    password: nbgp bmde hpom pjhv
+    host: ${SMTP_HOST}
+    port: ${SMTP_PORT}
+    username: ${SMTP_USERNAME}
+    password: ${SMTP_PASSWORD}
     properties:
       mail:
         smtp:
@@ -25,5 +25,5 @@ spring:
 
 weather:
   api:
-    key: 8afd51aa8fa8ce7c9d1f3aa828bfabc6
+    key: ${WEATHER_API}
 
