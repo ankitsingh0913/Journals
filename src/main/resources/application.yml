@@ -1,4 +1,7 @@
 spring:
+  mvc:
+    favicon:
+      enabled: false
   redis:
     host: ${Redis_Host}
     port: ${Redis_Port}
