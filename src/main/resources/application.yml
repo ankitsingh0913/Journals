@@ -29,9 +29,7 @@ spring:
 weather:
   api:
     key: ${WEATHER_API}
-server:
-  servlet:
-    context-path: /xclone
+
 
 #Something Changed
 #Againg Changed
