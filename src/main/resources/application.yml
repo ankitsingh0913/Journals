@@ -31,7 +31,7 @@ weather:
     key: ${WEATHER_API}
 server:
   servlet:
-    context-path: /api
+    context-path: /xclone
 
 #Something Changed
 #Againg Changed
