@@ -29,6 +29,9 @@ spring:
 weather:
   api:
     key: ${WEATHER_API}
+server:
+  servlet:
+    context-path: /api
 
 #Something Changed
 #Againg Changed
