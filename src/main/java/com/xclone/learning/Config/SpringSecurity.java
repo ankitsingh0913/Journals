@@ -33,6 +33,7 @@ public class SpringSecurity {
         return http.authorizeHttpRequests(request -> request
                 .requestMatchers("/journals/**","/user/**").authenticated()
                 .requestMatchers("/admin/**").hasRole("ADMIN")
+                .requestMatchers("/public/**").permitAll()
                 .anyRequest().permitAll())
                 .csrf(AbstractHttpConfigurer::disable)
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
