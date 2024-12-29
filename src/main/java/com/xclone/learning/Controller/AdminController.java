@@ -3,6 +3,7 @@ package com.xclone.learning.Controller;
 import com.xclone.learning.Cache.AppCache;
 import com.xclone.learning.Entity.User;
 import com.xclone.learning.Services.UserServices;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/admin")
+@Tag(name = "Admin APIs", description = "Create Admin, Get All User")
 public class AdminController {
 
     Logger logger = LoggerFactory.getLogger(AdminController.class);

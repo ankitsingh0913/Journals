@@ -1,9 +1,11 @@
 package com.xclone.learning.Controller;
 
+import com.xclone.learning.DTO.UserDTO;
 import com.xclone.learning.Entity.User;
 import com.xclone.learning.Services.UserDetailsServiceIMPL;
 import com.xclone.learning.Services.UserServices;
 import com.xclone.learning.Utills.JWTUtils;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/public")
 @Slf4j
+@Tag(name = "Public APIs",description = "Health Status, Signup, Login User")
 public class PublicController {
 
     @Autowired
@@ -34,9 +37,14 @@ public class PublicController {
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<?> signup(@RequestBody User user){
+    public ResponseEntity<?> signup(@RequestBody UserDTO user){
         try {
-            userServices.saveNewUser(user);
+            User newUser = new User();
+            newUser.setEmail(user.getEmail());
+            newUser.setUserName(user.getUserName());
+            newUser.setPassword(user.getPassword());
+            newUser.setSentimentAnalysis(user.isSentimentAnalysis());
+            userServices.saveNewUser(newUser);
             return new ResponseEntity<>(HttpStatus.CREATED);
         } catch (Exception e){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
