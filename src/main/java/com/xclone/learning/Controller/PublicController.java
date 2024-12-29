@@ -33,11 +33,6 @@ public class PublicController {
         return "ok";
     }
 
-    @GetMapping("/")
-    public String home() {
-        return "Welcome to the application!";
-    }
-
     @PostMapping("/signup")
     public ResponseEntity<?> signup(@RequestBody User user){
         try {
